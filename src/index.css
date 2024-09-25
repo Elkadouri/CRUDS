@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", system-ui;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --main-bg: #001;
+  --main-clr: rgba(255, 255, 255, 0.95); /* Correct transparency with rgba */
+  --btn-bg: #005;
+  --input-bg: #004;
+  --logo-clr: rgb(33, 51, 214);
+  --transition: 0.3s;
+}
+
+.light {
+  --main-bg: rgba(255, 255, 255, 0.95); /* Correct transparency with rgba */
+  --main-clr: #001;
+  --btn-bg: rgb(121, 18, 139);
+  --input-bg: #401047;
+  --logo-clr: #8305eb;
+}
+
+.wfull {
+  width: 100%;
+}
+
+.content {
+  background-color: var(--main-bg);
+  color: var(--main-clr);
+  min-height: 100vh; /* Ensure the content takes up the full viewport height */
+}
+
+.container-all {
+  width: 80%;
+  min-height: 100vh; /* Full height of viewport */
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between header, main, and footer */
+  gap: 30px;
+  margin: auto;
+  position: relative;
+}
+
+@media (width < 900px) {
+  .container-all{
+    width: 90%;
+  }
+}
+
+/* start header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  color: var(--logo-clr);
+}
+
+header .toggle-mode-btn {
+  cursor: pointer;
+  font-size: 19px;
+  border: 1px solid;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+header .toggle-light {
+  color: rgba(228, 156, 22, 0.651);
+  border-color: rgba(228, 156, 22, 0.651);
+}
+
+header .toggle-dark {
+  color: #7c7272;
+  border-color: #7c7272;
+}
+/* end header */
+
+
+/* start main */
+main {
+  flex-grow: 1; /* Make main expand and take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+main input {
+  padding: 4px 4px 4px 8px;
+  outline: none;
+  border: none;
+  background-color: var(--input-bg);
+  border-radius: 4px;
+  transition: var(--transition);
+  caret-color: var(--logo-clr);
+  color: rgba(255, 255, 255, 0.95); /* Correct transparency with rgba */
+}
+
+main input:focus {
+  scale: 1.04;
+}
+
+main input:disabled {
+  opacity: 0.4;
+}
+
+main button {
+  all: unset;
+  cursor: pointer;
+  background-color: var(--btn-bg);
+  text-align: center;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: small;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+main button:hover {
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+}
+
+main .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main .info .four-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+main .info .four-inputs input {
+  flex: 1;
+}
+
+.total {
+  min-width: 60px;
+  background-color: rgba(199, 35, 35, 0.637);
+  width: fit-content;
+  margin: auto;
+  padding: 2px 5px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.active {
+  background-color: rgba(32, 158, 32, 0.685) !important;
+}
+
+.create-or-update {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+main .info .search-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+main .info .search-btns button {
+  width: 40%;
+  flex: 1;
+}
+/* end main */
+
+
+/* start table */
+
+.table-container {
+  width: 100%; /* Make the container full width */
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+table.data {
+  width: 100%; /* Set the table to 100% width */
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+  border-collapse: collapse; /* Optional: for better visual appearance */
+  
+}
+
+table.data th, table.data td {
+  border: 1px solid var(--btn-bg); /* Optional: add borders for better visibility */
+  padding: 8px; /* Optional: add padding for better spacing */
+}
+
+
+table.data button {
+  width: 28px !important;
+  height: 28px !important;
+  padding: 0;
+  border-radius: 50%;
+}
+
+table.data button:hover {
+  opacity: 0.8;
+}
+
+
+/* Custom scrollbar styles */
+.table-container::-webkit-scrollbar {
+  height: 7px; /* Height of the horizontal scrollbar */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--input-bg); /* Scrollbar color */
+  border-radius: 4px; /* Rounded corners for the scrollbar */
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: var(--btn-bg); 
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #d4cccc; /* Background of the scrollbar track */
+  border-radius: 4px; /* Rounded corners for the scrollbar track */
+}
+/* end table */
+
+
+/* start footer */
+
+  footer{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 6px;
+    font-size: 14px;
+  
+  }
+  
+  footer p:first-child a{
+    color: var(--logo-clr);
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  footer p:first-child a:hover{
+    opacity: 0.8;
+  }
+
+/* end footer */
+
+
+/* Custom scrollbar styles for the HTML scrollbar */
+html::-webkit-scrollbar {
+  width: 7px; /* Width of the vertical scrollbar */
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(197, 11, 214, 0.37); /* Scrollbar color */
+  border-radius: 4px; /* Rounded corners for the scrollbar */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(228, 7, 248, 0.534); /* Color on hover */
+}
+
+html::-webkit-scrollbar-track {
+  background: #d4cccc; /* Background of the scrollbar track */
+  border-radius: 4px; /* Rounded corners for the scrollbar track */
+}
+
+
+/* scrool up */
+
+.scrool-up {
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--logo-clr);
+  color: var(--main-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:  var(--transition);
+  border: none;
+}
+
+.scrool-up:hover{
+  transform: translateY(-10px);
+}
+
+.scrool-up.show {
+  animation: fadeIn 0.5s forwards;
+}
+
+.scrool-up.hide {
+  animation: fadeOut 0.5s forwards;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0;
+  }
+}
